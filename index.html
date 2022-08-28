@@ -1,0 +1,111 @@
+<html>
+<title>الرئيسية  - الجامعة التقنية الوسطى</title>
+<link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+		.container{
+			margin-top:30px;
+			margin-bottom:30px;
+			padding:15px;
+			border-radius:5px;
+			background:#f2f2f2;
+			font-size:28px;
+			text-align:center;
+			color:#000;
+			font-weight:700;
+		}
+        th, td{
+            text-align: center;
+        }
+        #my_form{
+            display:none;
+        }
+</style>
+
+<body>
+    <div class="container">
+        <ul class="nav nav-tabs" dir="rtl" id="fixednav">
+            <li role="presentation" ><a href="#" onclick="display(1);">جدول</a></li>
+            <li role="presentation"><a href="#" onclick="display(2);">استمارة</a></li>
+          </ul>
+
+
+        <div class="row">
+            <a href="http://facebook.com" target="_blink">Facebook</a>
+        </div>
+
+
+        <div class="row" id="my_table">
+            <table class="table">
+                <tr>
+                    <th>#</th>
+                    <th colspan="3">Details</th>
+                </tr>
+                <tr>
+                    <th>#</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>age</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Mustafa</td>
+                    <td>saad</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Haider</td>
+                    <td>Salam</td>
+                    <td>18</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="row" id="my_form">
+            <div class="col-md-8 col-md-offset-2 box2">
+                <input type="text" class="form-control" placeholder="اكتب الاسم">
+                <input type="text" class="form-control" placeholder="write your email">
+                <input type="password" id="my_password" class="form-control" placeholder="write your password">
+                <button class="form-control btn btn-primary" onclick="show_password();">show password</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function show_password(){
+            var my_password = document.getElementById('my_password');
+            if(my_password.type == "password"){
+                my_password.type = "text";
+            }else{
+                my_password.type = "password";
+            }
+            //alert(my_password);
+        }
+
+        function display(e){
+            if(e == 1){
+                document.getElementById('my_form').style.display = "none";
+                //document.getElementById('my_table').style.display = "block";
+                $( "#my_table" ).fadeIn( "slow", function() {
+                    // Animation complete
+                });
+            }else{
+                document.getElementById('my_table').style.display = "none";
+                //document.getElementById('my_form').style.display = "block";
+                $( "#my_form" ).fadeIn( "slow", function() {
+                    // Animation complete
+                });
+            }
+        }
+    </script>
+
+    <script>
+$('#fixednav ul li a').click(function () {
+    $('#fixednav ul li a').removeClass('active');
+    $(this).addClass('active');
+});
+    </script>
+</body>
+</html>
